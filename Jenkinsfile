@@ -22,6 +22,7 @@ pipeline {
                 //ensures that the step is always executed at the completion of the Test stage, regardless of the stage’s outcome.
                 always {
                     junit 'target/surefire-reports/*.xml'
+                    input message: 'Testing Recorded. Please review results. Ready to run deliver.sh and create the Java application? (Click "Proceed" to continue)' 
                 }
             }
         }
